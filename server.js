@@ -7,8 +7,6 @@ const lineBreak = '________________________________________';
 let index = {};
 let testResultArray = [];
 
-let call = 0;
-let put = 0;
 //Main
 fs.writeFileSync(resultsSummaryFile, '');
 let resultsSummaryFileStream = fs.createWriteStream(resultsSummaryFile, {flags: 'a'});
@@ -27,7 +25,7 @@ function loadHistoricalData(){
 		console.log("Loading Historical Data");
 
 		let data = String(fs.readFileSync(historicalData));
-		let lines = data.split("\n");
+		let lines = data.split("\n"); //downloaded from yahoo finance
 		lines.shift();
 		lines.forEach((line) => {
 			let splitData = line.split(',');
@@ -172,6 +170,7 @@ function getDate(startDate, number){
 	return year+"-"+month+"-"+day;
 }
 
+//https://stackoverflow.com/questions/563406/add-days-to-javascript-date/34017571
 function addDays(date, days) {
 	var result = new Date(date);
 	result.setDate(result.getDate() + days);

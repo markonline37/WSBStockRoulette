@@ -1,7 +1,12 @@
 {
-	"7":{
+	"1":{
 		"balance": 100000,
+		"startDate": "25/06/2020",
+		"numberOfRuns": 100000
+	},
+	"2":{
+		"balance": 50000,
 		"startDate": "25/01/2020",
-		"numberOfRuns": 1000000
+		"numberOfRuns": 10000
 	}
 }
